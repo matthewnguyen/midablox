@@ -33,7 +33,8 @@ class MidaBlox
 		puts "Start!"
 		@score = 0
 		@attempts = []
-		@playing_letters = @six_letter_words.sample.chars.shuffle
+		@the_word = @six_letter_words.sample.upcase
+		@playing_letters = @the_word.chars.shuffle
 		puts "Welcome to MidaBlox!"
 		display_letters
 	end
@@ -68,6 +69,7 @@ class MidaBlox
 
 	def game_end
 		puts "That's it! Here's your score: #{@score}"
+		puts "The 6 letter word was #{@the_word}"
 	end
 end
 
